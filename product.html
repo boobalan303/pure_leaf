@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap">
 </head>
 <style>
+    body{
+        margin: 0;
+    }
    .navbar{
-            height: 30px;
+            height: 40px;
             width: 100%;
             position:sticky;
             top: 0;
             background-color: white;
-            
-
+            z-index: 1000;
         }
         .banner{
             margin-top: 10px;
@@ -49,19 +51,27 @@
             border-bottom: 2px solid #ccc;
             padding-bottom: 10px;
         }
+        h3{
+            text-decoration: underline #ccc solid;
+        }
         .category {
             margin-bottom: 20px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around; 
+            justify-content: space-around;
+            
         }
         .product {
-            border: 1px solid #ddd;
+            /* border: 1px solid #ddd; */
             border-radius: 4px;
             padding: 10px;
             margin: 10px 0;
-            height: 300px;
-            width: 300px;
+            height: 380px;
+            width: 200px;
+            box-shadow: 0 0 30px lightgray;
+        }
+        .product:hover{
+            box-shadow: 0 0 50px darkgrey;
         }
         .product h3 {
             margin: 0;
@@ -73,28 +83,105 @@
             font-weight: bold;
             color: green;
         }
+        .price-off{
+            text-decoration: line-through;
+            color: darkgray;
+            margin-left: 10px;
+        }
+        .searchbar{
+            float: right;
+            margin-top: 25px;
+            margin-right: 10px;
+        }
+        .searchbar input[type=text]{
+            height: 35px;
+            margin: 0;
+            border:1px solid green;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
        .image-product{
-            width: 150px;
-            height: 150px;
-            border-radius: 3px;
-            
+            width: 200px;
+            height: 200px;
+            border-radius:2px;
+            position: absolute;
+            box-shadow: 0 0 30px lightgray;    
        }
+
+       .contant{
+        position: relative;
+        top: 150px;
+       }
+       .logo-image{
+        position: relative;
+       }
+       .logo{
+        position: relative;
+        height: 40px;
+        width: 40px;
+        top: 160px;
+       }
+       .ad{
+        font-size: smaller;
+        color: darkgrey;
+       }
+       .brand{
+        color: gray;
+        
+       }
+       .share{
+        position: relative;
+        float: right;
+        top: 10px;
+        right: 15px;
+        color: white; 
+       }
+       #share:hover{
+        font-size: large;
+       }
+       .heart{
+        position: relative;
+        float: right;
+        top: 10px;
+        right: 10px;
+        color: white;  
+       }
+       #heart:hover{
+        color: red;
+        /* font-size: large; */
+       }
+       .rating{
+       background-color: #28a745;  
+       height:15px;
+       width: 40px;  
+       color: white; 
+       border-radius: 5px;
+       font-size: small;
+       text-align: center;
+       margin: 5px;
+       }
+       .rating2{
+        color: lightgray;   
+        margin: 5px; 
+        font-size: small;
+    }
        button{
             border-radius: 2px;
-            margin: 5px;
+            margin: 5px 9px;
             font-size: 10px;
             border: none;
-            background-color: chartreuse;
+            background-color:#28a745;
             padding: 10px;
             color: white;
-            margin-left: 5px;
-
+            margin-top: 10px;
         }
         button:hover{   
-           background-color: cornflowerblue;
+           background-color: #218838;
         }
         i:hover{
-            color: blue;
+            color: black;
+        }
+        .list i:hover{
+            color: #28a745;
         }
 footer {
     background-color: #333;
@@ -117,7 +204,7 @@ footer {
 
 .footer-section h3 {
     margin-bottom: 10px;
-    color: chartreuse; /* Accent color for headers */
+    color: chartreuse;
 }
 
 .footer-section p,
@@ -137,16 +224,82 @@ footer {
 }
 
 .footer-section a:hover {
-    color: chartreuse; /* Accent color on hover */
+    color: chartreuse;
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
-    border-top: 1px solid #444; /* Divider line */
+    border-top: 1px solid #444; 
     padding-top: 10px;
-}
-        
+} 
+@media (min-width: 1025px) {
+        .navbar {
+            height: 60px;
+        }
+        .list {
+            padding-left: 40%;
+        }
+        .product {
+            height: 350px;
+            width: 250px;
+        }
+        .image-product {
+            height: 200px;
+            width: 250px;
+        }
+        .logo {
+            height: 50px;
+            width: 50px;
+        }
+        .category {
+            justify-content: space-between;
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 768px) {
+        .navbar {
+            height: 50px;
+        }
+        .list {
+            padding-left: 20%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .navbar {
+            height: 50px;
+        }
+        .head {
+            font-size: 24px;
+        }
+        #head{
+            font-size: 14px;
+        }
+        .list {
+            padding-left: 10%;
+        }
+        .list-item {
+            padding: 5px;
+        }
+       
+    }
+
+    @media (max-width: 480px) {
+        .navbar {
+            height: 40px;
+        }
+        .head {
+            font-size: 20px;
+        }
+        #head{
+            font-size: 8px;
+        }
+        .list {
+            padding-left: 5%;
+        }
+       
+    }    
 </style>
 <body>
     <div class="navbar">
@@ -161,35 +314,500 @@ footer {
         </ul>
     </div>
     <div class="banner">
-        <img src="images/banner-products.jpg" alt="" href="#product" height="250px" width="100%">
+        <img src="images/banner-products.jpg" alt="" href="#product" height="300px" width="100%">
+    </div>
+    <div class="searchbar">
+        <input type="text" placeholder="Search">
+        <button type="submit" ><i class="fa-sharp-duotone fa-solid fa-magnifying-glass"></i></button>
     </div>
     <h1>PRODUCT LIST BY CATEGORY</h1>
-    <h2>Herbal Flavors</h2>
+    <h2 style="text-align: center;">Herbal Flavors</h2>
     <div class="category">
         <div class="product">
-            <img class="image-product" src="images/Chamomile Tea powder.jpeg" alt="">
-            <h3>Chamomile Tea powder</h3>
-            <p>Description:Sweet and floral, great for relaxation.</p>
-            <p class="price">₹250/- per 100g</p>
+            <div class="logo-image">
+            <img class="image-product" src="images/Chamomile Tea powder.jpeg" alt="" id="image-product">
+            <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+            <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+            <img src="images/logo head.jpg" alt="" class="logo">
+        </div>
+        <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Chamomile Tea</h3>  
+            <div>
+                    <span class="rating">4.5<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(219)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
             <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
             <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>  
         </div>
         <div class="product">
+            <div class="logo-image">
             <img class="image-product" src="images/Licorice-Root-Tea.jpg" alt="">
-            <h3>liquorice root Tea powder</h3>
-            <p>Description:Sweet and slightly spicy, with a distinctive flavor.</p>
-            <p class="price">₹250/- per 100g</p>
+            <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+            <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+            <img src="images/logo head.jpg" alt="" class="logo">
+        </div>
+        <div class="contant">
+            <p class="ad">Sponsered</p>
+            <p class="brand">Pure Leaf</p>
+            <h3>Licorice Root Tea</h3>  
+        <div>
+                <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                <span class="rating2">(400)</span>
+        </div>
+        <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+        <p><span class="delivery">Free Delivery</span></p>
+        <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+        <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+    </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+            <img class="image-product" src="images/rooibos.jpg" alt="">
+            <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+            <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+            <img src="images/logo head.jpg" alt="" class="logo">
+        </div>
+        <div class="contant">
+            <p class="ad">Sponsered</p>
+            <p class="brand">Pure Leaf</p>
+            <h3>Rooibos Tea</h3>  
+        <div>
+                <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                <span class="rating2">(400)</span>
+        </div>
+        <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+        <p><span class="delivery">Free Delivery</span></p>
+        <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+        <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+    </div>  
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Lemon-Verbena.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Lemon Verbenna Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
             <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
             <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
         </div>
+        </div>
         <div class="product">
-            <img class="image-product" src="images/rooibos.jpg" alt="">
-            <h3>Rooibos</h3>
-            <p>Description:Naturally sweet and earthy, caffeine-free</p>
-            <p class="price">₹250/- per 100g</p>
+            <div class="logo-image">
+                <img class="image-product" src="images/Sage and Lemon Balm.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Sage And Lemon Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
             <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
             <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
-            
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Nettle Leaf.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Nettle Leaf Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/peach_rooibos_tea_steeping.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>          
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>peach Rooibos Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Holy Basil.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Holy Basil Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Holy Basil.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Holy Basil Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div> 
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Holy Basil.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Holy Basil Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div> <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Holy Basil.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Holy Basil Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div> <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Holy Basil.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Holy Basil Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>      
+    </div>
+    <h2 style="text-align: center;">Fruit Flavors</h2>
+    <h3>Berry Blends:</h3>
+    <div class="category">
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/mixed berry.png" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Mixed Berry Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/blueberry-hibiscus-tea.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Blueberry Hibiscus Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Raspberry-Mint-5-scaled.jpeg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Raspberry Mint Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Holy Basil.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Holy Basil Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div> <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Holy Basil.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Holy Basil Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div> <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Holy Basil.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Holy Basil Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>     
+    </div>
+    <h3>Citrus Blends:</h3>
+    <div class="category">
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Lemon Ginger.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Lemon Giger Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Orange Spice.webp" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Orange Spice Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Lime & Lemongrass.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Lime & Lemongrass Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Lime & Lemongrass.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Lime & Lemongrass Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
+        </div>
+        <div class="product">
+            <div class="logo-image">
+                <img class="image-product" src="images/Lime & Lemongrass.jpg" alt="" id="image-product">
+                <span class="heart"><i id="heart" class="fa-sharp-duotone fa-solid fa-heart"></i></span>
+                <span class="share"><i id="share" class="fa-solid fa-share"></i></span>
+                <img src="images/logo head.jpg" alt="" class="logo">
+            </div>            
+            <div class="contant">
+                <p class="ad">Sponsered</p>
+                <p class="brand">Pure Leaf</p>
+                <h3>Lime & Lemongrass Tea</h3>  
+            <div>
+                    <span class="rating">4.8<i class="fa-regular fa-star"></i></span>
+                    <span class="rating2">(400)</span>
+            </div>
+            <p class="price"><span style="color: black;">₹250/- </span><span class="price-off">₹400/-</span></p>
+            <p><span class="delivery">Free Delivery</span></p>
+            <button><span><i class="fas fa-shopping-bag"></i></span> Buy Now</button>
+            <button><span><i class="fas fa-shopping-cart"></i></span> Go To Cart</button>
+        </div>
         </div>    
     </div>
     <footer>
